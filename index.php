@@ -1,12 +1,13 @@
 <?php
-$x = 2;
-function change_x(&$x) {
-    $x = 5;
+$sound = 'blee';
+
+$sheeps = [];
+
+for($i = 0; $i < 5; $i++) {
+    $sheeps[$i] = &$sound; 
 }
 
-
-change_x($x);
-print $x;
+var_dump($sheeps);
 ?>
 <!DOCTYPE html> 
 <html> 
