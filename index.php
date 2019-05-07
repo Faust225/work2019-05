@@ -11,8 +11,9 @@ for($i = 0; $i < 5; $i++) {
 var_dump($sheeps);
 
 for($i = 0; $i < 5; $i++) {
-    unset($sheeps[0]);
-    $sheeps[0] = 'bb system';
+    unset($sheeps[$i]);
+    $sheeps[$i] = $sound; 
+    $sheeps[0] = 'Hello freedom';
 }
 
 var_dump($sheeps);
