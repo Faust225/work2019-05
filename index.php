@@ -1,15 +1,16 @@
 <?php
 
-function square($x) {
-    return $x ** 2;
-}
+$result = 0;
 
 if (isset($_POST['done'])) {
-    $calculate = $_POST['number'];
-    $result = square($calculate);
     
-} else {
-    $result = '';
+    $result = $_POST['done'];
+    $result++;
+}
+
+$images = [];
+for($i = 0; $i < $result; $i++) {
+    $images[$i] = 'banana.jpg';
 }
 ?>
 <!DOCTYPE html> 
@@ -19,10 +20,11 @@ if (isset($_POST['done'])) {
         <meta charset="utf-8"> 
     </head> 
     <body>
-        <form method="post">
-            <input type="text" name="number">
-            <input type="submit" name="done">
+        <form method="post" action="index.php">
+            <input type="submit" name="done" value="<?php print $result ?>">
         </form>
-        <h3><?php print $result; ?></h3>
+        <?php foreach($images as $img): ?>
+        <img src="<?php print $img; ?>">
+        <?php endforeach; ?>
     </body> 
 </html> 
