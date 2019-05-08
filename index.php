@@ -1,17 +1,16 @@
 <?php
 
 function square($x) {
-    return $x * $x;
+    return $x ** 2;
 }
-$result = '';
 
-if(isset($_POST['done'])) {
+if (isset($_POST['done'])) {
     $calculate = $_POST['number'];
     $result = square($calculate);
+    
 } else {
     $result = '';
 }
-
 ?>
 <!DOCTYPE html> 
 <html> 
