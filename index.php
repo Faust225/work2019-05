@@ -1,22 +1,14 @@
 <?php
 
-$sound = 'blee';
-
-$sheeps = [];
-
-for($i = 0; $i < 5; $i++) {
-    $sheeps[$i] = &$sound; 
+function square($x) {
+    return $x * $x;
 }
 
-var_dump($sheeps);
-
-for($i = 0; $i < 5; $i++) {
-    unset($sheeps[$i]);
-    $sheeps[$i] = $sound; 
-    $sheeps[0] = 'Hello freedom';
+if(isset($_POST['done'])) {
+    $calculate = $_POST['number'];
+    print square($calculate);
 }
 
-var_dump($sheeps);
 ?>
 <!DOCTYPE html> 
 <html> 
@@ -25,5 +17,9 @@ var_dump($sheeps);
         <meta charset="utf-8"> 
     </head> 
     <body>
+        <form method="post">
+            <input type="text" name="number">
+            <input type="submit" name="done">
+        </form>
     </body> 
 </html> 
