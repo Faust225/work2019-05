@@ -3,10 +3,13 @@
 function square($x) {
     return $x * $x;
 }
+$result = '';
 
 if(isset($_POST['done'])) {
     $calculate = $_POST['number'];
-    print square($calculate);
+    $result = square($calculate);
+} else {
+    $result = '';
 }
 
 ?>
@@ -21,5 +24,6 @@ if(isset($_POST['done'])) {
             <input type="text" name="number">
             <input type="submit" name="done">
         </form>
+        <h3><?php print $result; ?></h3>
     </body> 
 </html> 
