@@ -12,6 +12,25 @@ $images = [];
 for($i = 0; $i < $result; $i++) {
     $images[$i] = 'banana.jpg';
 }
+
+// count val values in array
+function count_val($arr, $val) {
+    
+$counter = 0;
+   
+    foreach($arr as $el) {
+            
+        if($val == $el) { 
+            $counter++;
+                 
+            } else {
+                $counter;
+            }
+        }
+    return $counter;
+}
+
+print count_val([5, 5, 8, 3], 5);
 ?>
 <!DOCTYPE html> 
 <html> 
